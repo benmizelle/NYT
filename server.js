@@ -1,4 +1,5 @@
-// Include Server Dependencies
+// Dependencies =============================================
+// ==========================================================
 var express = require("express");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
@@ -7,9 +8,9 @@ var mongoose = require("mongoose");
 // Require History Schema
 var History = require("./models/History");
 
-// Create Instance of Express
+// Express
 var app = express();
-// Sets an initial port. We'll use this later in our listener
+// Sets port.
 var PORT = process.env.PORT || 8080;
 
 // Run Morgan for Logging
@@ -21,9 +22,9 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 app.use(express.static("./public"));
 
-// -------------------------------------------------
+// ===========================================================
 
-// MongoDB Configuration configuration (Change this URL to your own DB)
+// MongoDB Configuration(Change this URL to the mLab DB)
 mongoose.connect("mongodb://admin:codingrocks@ds023664.mlab.com:23664/reactlocate");
 var db = mongoose.connection;
 
@@ -35,7 +36,8 @@ db.once("open", function() {
     console.log("Mongoose connection successful.");
 });
 
-// -------------------------------------------------
+// Routes ====================================================
+// ===========================================================
 
 // Main "/" Route. This will redirect the user to our rendered React application
 app.get("/", function(req, res) {
@@ -78,9 +80,9 @@ app.post("/api", function(req, res) {
     });
 });
 
-// -------------------------------------------------
-
+// ==========================================================
 // Listener
+// ==========================================================
 app.listen(PORT, function() {
     console.log("App listening on PORT: " + PORT);
 });

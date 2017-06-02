@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4dd71981-0286-400f-b383-a48758a4b518" name="Default" comment="" />
+    <list default="true" id="4dd71981-0286-400f-b383-a48758a4b518" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,31 +24,43 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webpack.config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="930">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2580">
-              <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+            <state relative-caret-position="780">
+              <caret line="26" column="52" lean-forward="false" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/components/Main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="History.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/History.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -71,6 +86,7 @@
       <list>
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/server.js" />
       </list>
     </option>
@@ -274,12 +290,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1496429329773</updated>
-      <workItem from="1496429335826" duration="3620000" />
+      <workItem from="1496429335826" duration="4674000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3620000" />
+    <option name="totallyTimeSpent" value="4674000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="662" y="0" width="1266" height="1088" extended-state="0" />
@@ -331,11 +347,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/Main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/History.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2580">
-          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="780">
+          <caret line="26" column="52" lean-forward="false" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

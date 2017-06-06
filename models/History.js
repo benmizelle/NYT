@@ -9,7 +9,7 @@ var HistorySchema = new Schema({
         type: Date
     },
     url: {
-        type: baseURL
+        type: String
     }
 });
 

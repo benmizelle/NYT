@@ -1,18 +1,15 @@
-// ==========================================================
-// Dependencies =============================================
-// ==========================================================
+// Include Server Dependencies
 var express = require("express");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
-// Require History Schema
-var History = require("./models/History");
+// Require Schemas
+var Article = require("./server/model");
 
-// Express
+// Create Instance of Express
 var app = express();
-// Sets port.
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3000; // Sets an initial port. We'll use this later in our listener
 
 // Run Morgan for Logging
 app.use(logger("dev"));
@@ -23,67 +20,77 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 app.use(express.static("./public"));
 
-// ===========================================================
+// -------------------------------------------------
 
-// MongoDB Configuration to mLab
-mongoose.connect("mongodb://heroku_wbkh8jv:go6ofj4i9nsh1kom48n3qjngn8@ds111262.mlab.com:11262/heroku_wbkh8jv5");
+// MongoDB Configuration configuration
+mongoose.connect("mongodb://admin:reactrocks@ds023593.mlab.com:23593/heroku_pg676kmk");
 var db = mongoose.connection;
 
 db.on("error", function(err) {
-    console.log("Mongoose Error: ", err);
+  console.log("Mongoose Error: ", err);
 });
 
 db.once("open", function() {
-    console.log("Mongoose connection successful.");
+  console.log("Mongoose connection successful.");
 });
 
-// Routes ====================================================
-// ===========================================================
 
-// Main "/" Route. This will redirect the user to our rendered React application
-app.get("/", function(req, res) {
-    res.sendFile(__dirname + "/public/index.html");
-});
+// -------------------------------------------------
 
-// This is the route we will send GET requests to retrieve our most recent search data.
-// We will call this route the moment our page gets rendered
-app.get("/api", function(req, res) {
+// Route to get all saved articles
+app.get("/api/saved", function(req, res) {
 
-    // We will find all the records, sort it in descending order, then limit the records to 5
-    History.find({}).sort([
-        ["date", "descending"]
-    ]).limit(5).exec(function(err, doc) {
-        if (err) {
-            console.log(err);
-        }
-        else {
-            res.send(doc);
-        }
+  Article.find({})
+    .exec(function(err, doc) {
+
+      if (err) {
+        console.log(err);
+      }
+      else {
+        res.send(doc);
+      }
     });
 });
 
-// This is the route we will send POST requests to save each search.
-app.post("/api", function(req, res) {
-    console.log("BODY: " + req.body.location);
+// Route to add an article to saved list
+app.post("/api/saved", function(req, res) {
+  var newArticle = new Article(req.body);
 
-    // Here we'll save the location based on the JSON input.
-    // We'll use Date.now() to always get the current date time
-    History.create({
-        location: req.body.location,
-        date: Date.now()
-    }, function(err) {
-        if (err) {
-            console.log(err);
-        }
-        else {
-            res.send("Saved Search");
-        }
-    });
+  console.log(req.body);
+
+  newArticle.save(function(err, doc) {
+    if (err) {
+      console.log(err);
+    }
+    else {
+      res.send(doc);
+    }
+  });
 });
 
-// ==========================================================
-// Listener
-// ==========================================================
+// Route to delete an article from saved list
+app.delete("/api/saved/", function(req, res) {
+
+  var url = req.param("url");
+
+  Article.find({ url: url }).remove().exec(function(err) {
+    if (err) {
+      console.log(err);
+    }
+    else {
+      res.send("Deleted");
+    }
+  });
+});
+
+// Any non API GET routes will be directed to our React App and handled by React Router
+app.get("*", function(req, res) {
+  res.sendFile(__dirname + "/public/index.html");
+});
+
+
+// -------------------------------------------------
+
 app.listen(PORT, function() {
-    console.log("App listening on PORT: " + PORT);
+  console.log("App listening on PORT: " + PORT);
 });
